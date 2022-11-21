@@ -1,0 +1,26 @@
+{
+  "name": "postgress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.ts",
+    "update": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/utils/data_source.ts",
+    "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/utils/data_source.ts"
+  },
+ 
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.14",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "typeorm": "^0.3.10",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
