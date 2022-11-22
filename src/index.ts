@@ -5,7 +5,7 @@ import { deleteUserRouter } from "./Routes/deleteUser";
 import { createProfileRouter } from "./Routes/createProfile"
 import { createCompanyRouter } from './Routes/createCompany';
 import { createProductRouter } from './Routes/createProduct';
-import {connectDB} from "../utils/data_source"
+import {connectDB} from "./utils/data_source"
 
 //create express app
 const app = express();

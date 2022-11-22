@@ -25,6 +25,12 @@ export class User extends BaseEntity {
     unique: true,
   })
   email: string;
+
+  @Column({
+    unique: true,
+  })
+  telephone: number;
+
   @OneToOne(() => Profile, (profile) => profile.user)
   @JoinColumn()
   profile: Profile

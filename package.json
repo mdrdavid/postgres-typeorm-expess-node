@@ -6,8 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts",
+    "migrations:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./src/utils/data_source.ts -p ./src/utils/data_source.ts",
+    "migrations:gen-up": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./src/utils/data_source.ts -p  ./src/utils/data_source.ts && migration:run",
+    "migrations:update": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/utils/data_source.ts",
+    "migrations:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/utils/data_source.ts",
     "update": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/utils/data_source.ts",
-    "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/utils/data_source.ts"
+    "revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/utils/data_source.ts",
+    "create": "npx typeorm migration:create ./src/migrations/UserRefactoring"
   },
  
   "author": "",

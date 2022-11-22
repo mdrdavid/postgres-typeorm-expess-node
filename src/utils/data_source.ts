@@ -1,8 +1,8 @@
 import { DataSource } from "typeorm";
-import { Profile } from '../src/Entities/Profile';
-import {Company}  from '../src/Entities/Company';
-import { Products } from '../src/Entities/Products';
-import { User } from "../src/Entities/User";
+import { Profile } from '../Entities/Profile';
+import {Company}  from '../Entities/Company';
+import { Products } from '../Entities/Products';
+import { User } from "../Entities/User";
 
 export const connectDB = new DataSource({
 	type: "postgres",

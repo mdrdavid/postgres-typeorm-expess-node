@@ -19,6 +19,9 @@ export class Products extends BaseEntity{
   @Column()
   type: string
 
+  @Column()
+  amount: number
+
   @ManyToMany(() => Company, (company) => company.products)
     company: Company[]
 }
