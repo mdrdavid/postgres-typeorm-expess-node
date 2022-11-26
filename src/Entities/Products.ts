@@ -1,27 +1,24 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToMany,
-  BaseEntity
-} from "typeorm"
+	Entity,
+	PrimaryGeneratedColumn,
+	Column,
+	ManyToMany,
+	BaseEntity,
+} from "typeorm";
 
-import { Company } from "./Company"
+import { Company } from "./Company";
 
 @Entity()
-export class Products extends BaseEntity{
-  @PrimaryGeneratedColumn()
-  id: number
+export class Products extends BaseEntity {
+	@PrimaryGeneratedColumn()
+	id: number;
 
-  @Column()
-  name: string
+	@Column()
+	name: string;
 
-  @Column()
-  type: string
+	@Column()
+	type: string;
 
-  @Column()
-  amount: number
-
-  @ManyToMany(() => Company, (company) => company.products)
-    company: Company[]
+	@ManyToMany(() => Company, (company) => company.products)
+	company: Company[];
 }

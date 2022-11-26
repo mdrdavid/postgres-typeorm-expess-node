@@ -2,10 +2,10 @@ import express from "express";
 
 import { createUserRouter } from "./Routes/createUser";
 import { deleteUserRouter } from "./Routes/deleteUser";
-import { createProfileRouter } from "./Routes/createProfile"
-import { createCompanyRouter } from './Routes/createCompany';
-import { createProductRouter } from './Routes/createProduct';
-import {connectDB} from "./utils/data_source"
+import { createProfileRouter } from "./Routes/createProfile";
+import { createCompanyRouter } from "./Routes/createCompany";
+import { createProductRouter } from "./Routes/createProduct";
+import { connectDB } from "./utils/data_source";
 
 //create express app
 const app = express();
@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(createUserRouter);
 app.use(deleteUserRouter);
 app.use(createProfileRouter);
-app.use(createCompanyRouter)
-app.use(createProductRouter)
+app.use(createCompanyRouter);
+app.use(createProductRouter);
 
 connectDB
 	.initialize()
@@ -29,6 +29,5 @@ connectDB
 
 app.listen(5000, () => {
 	console.log("app is listening");
-	
 });
 export default connectDB;

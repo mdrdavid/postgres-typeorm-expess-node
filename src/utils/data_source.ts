@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
-import { Profile } from '../Entities/Profile';
-import {Company}  from '../Entities/Company';
-import { Products } from '../Entities/Products';
+import { Profile } from "../Entities/Profile";
+import { Company } from "../Entities/Company";
+import { Products } from "../Entities/Products";
 import { User } from "../Entities/User";
 
 export const connectDB = new DataSource({
@@ -12,7 +12,7 @@ export const connectDB = new DataSource({
 	password: "david",
 	database: "crud",
 	entities: [User, Profile, Company, Products],
-	synchronize: true,
+	synchronize: false,
 	migrations: ["src/migrations/**/*.ts"],
-	subscribers: ['src/subscriber/**/*{.ts,.js}'],
+	subscribers: ["src/subscriber/**/*{.ts,.js}"],
 });

@@ -17,6 +17,10 @@ export class Company extends BaseEntity{
     @Column()
     location: string
 
+    
+    @Column({default:null})
+    phone: number
+
     @OneToOne(() => Profile, {cascade: true})
     @JoinColumn()
     profile: Profile;
